@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>APUZ SHOP</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+    <header>
+      <div class="sosmed">
+        <a href="https://wa.me/6281234567890" target="_blank" title="WhatsApp">
+          <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp" class="icon-sosmed">
+        </a>
+        <a href="https://instagram.com/apuzshop" target="_blank" title="Instagram">
+          <img src="https://cdn-icons-png.flaticon.com/512/733/733558.png" alt="Instagram" class="icon-sosmed">
+        </a>
+        <a href="https://facebook.com/apuzshop" target="_blank" title="Facebook">
+          <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook" class="icon-sosmed">
+        </a>
+      </div>
+
+      <div class="header-container">
+        <h1>APUZ GAME SHOP</h1>
+        <nav>
+          <a href="beranda.html"><i class="fas fa-home"></i> Beranda</a>
+        <a href="#"><i class="fas fa-box"></i> Produk</a>
+        <a href="#kontak"><i class="fas fa-envelope"></i> Kontak</a>
+        <a href="keranjang.html"><i class="fas fa-shopping-cart"></i> Keranjang</a>
+
+        </nav>
+      </div>
+    </header>
+
+  <section>
+    <h2>Selamat datang di toko kami!</h2>
+    <p>Pilih produk favoritmu dan belanja sekarang juga!</p>
+  </section>
+
+  <section class="kontainer-produk">
+    <div class="produk">
+      <img src="https://i.imgur.com/H2DsixB.jpeg" alt="PLaystasion 3">
+      <h3>PLaystasion 3</h3>
+      <p>konsol permainan video rumahan yang dikembangkan oleh Sony.
+      PS3 merupakan penerus PlayStation 2 (PS2) dan merupakan bagian
+      dari merek PlayStation. </p>
+      <p>Rp 1.100.000</p>
+      <button onclick="tambahKeKeranjang('PLaystasion 3', 1100000)">Tambah ke Keranjang</button>
+      <button onclick="beliLangsung('PLaystasion 3')">Beli Sekarang</button>
+    </div>
+
+    <div class="produk">
+      <img src="https://i.imgur.com/JPQ2MVo.jpeg" alt="PLaystasion 4">
+      <h3>Playstasion 4</h3>
+      
+      <p>PS 4 konsol permainan video rumahan yang 
+        diproduksi oleh Sony Computer Entertainment.
+        PS4 merupakan konsol generasi kedelapan yang bersaing dengan
+        Nintendo Wii U dan Microsoft Xbox One. </p>
+      <p>Rp 2.499.000</p>
+      <button onclick="tambahKeKeranjang('PLaystasion 4', 2.499000)">Tambah ke Keranjang</button>
+      <button onclick="beliLangsung('PLaystasion 4')">Beli Sekarang</button>
+    </div>
+
+    <div class="produk">
+      <img src="https://i.imgur.com/6sEeFgs.png" alt="PLaystasion 5">
+      <h3>Playstasion 5</h3>
+      <p>konsol permainan video yang dikembangkan oleh Sony Interactive Entertainment.
+        PS5 merupakan penerus dari PlayStation 4 (PS4). </p>
+      <p>Rp 8.588.000</p>
+      <button onclick="tambahKeKeranjang('PLaystasion 5', 8588000)">Tambah ke Keranjang</button>
+      <button onclick="beliLangsung('PLaystasion 3')">Beli Sekarang</button>
+    </div>
+
+    <div class="produk">
+      <img src="https://i.imgur.com/AbSPag1.png" alt="xbox seris s">
+      <h3>Xbox seris s</h3>
+      <p>Xbox Series S adalah konsol permainan video 
+        generasi keempat dari Microsoft yang dirilis pada November 2020.Konsol ini memiliki performa tinggi
+        dan kualitas grafis yang baik.</p>
+      <p>Rp 4.149.000</p>
+      <button onclick="tambahKeKeranjang('Xbox seris s', 4149000)">Tambah ke Keranjang</button>
+      <button onclick="beliLangsung('Xbox seris s')">Beli Sekarang</button>
+    </div>
+  </section>
+
+  <section class="kategori">
+    <h2>Kategori</h2>
+    <ul>
+      <li>Consol</li>
+      <li>Playstasiun</li>
+      <li>Game-Game terbaik</li>
+    </ul>
+  </section>
+
+  <section class="tentang-kami">
+    <h2>Tentang Kami</h2>
+    <p>Apuz Game Store adalah platform e-commerce lokal yang menyediakan berbagai produk dengan harga terbaik.</p>
+  </section>
+
+  <footer class="footer">
+    <p>&copy; 2025 Halaman E-commerce Sederhana. Semua Hak Dilindungi</p>
+  </footer>
+
+  <section id="kontak" class="kontak-form">
+    <h2>Hubungi Kami</h2>
+    <p>Email:apuzshop@gmail.com</p>
+    <p>Phone: 08380-6431-221</p>
+    <form onsubmit="kirimPesan(event)">
+      <input type="text" id="nama" placeholder="Nama" required>
+      <input type="email" id="email" placeholder="Email" required>
+      <textarea id="pesan" rows="4" placeholder="Pesan Anda..." required></textarea>
+      <button type="submit">Kirim Pesan</button>
+    </form>
+
+  <script>
+    function tambahKeKeranjang(nama, harga) {
+      let keranjang = JSON.parse(localStorage.getItem('keranjang')) || [];
+      let index = keranjang.findIndex(item => item.nama === nama);
+      if (index !== -1) {
+        keranjang[index].jumlah += 1;
+      } else {
+        keranjang.push({ nama, harga, jumlah: 1 });
+      }
+      localStorage.setItem('keranjang', JSON.stringify(keranjang));
+      alert(nama + " ditambahkan ke keranjang!");
+    }
+
+    function beliLangsung(nama) {
+      alert("Anda membeli " + nama + " langsung.");
+    }
+
+  </script>
+
+</body>
+</html>

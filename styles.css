@@ -1,0 +1,96 @@
+body {
+  background-color: #8f898978;
+  font-family: Arial, sans-serif;
+  margin: 5px;
+  padding: 10px;
+}
+
+header {
+  background-color: #1fbea9;
+  color: white;
+  padding: 20px 0;
+  position: relative;
+  text-align: center;
+}
+
+.header-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sosmed {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+}
+
+.icon-sosmed {
+  width: 24px;
+  height: 24px;
+  margin-left: 10px;
+  transition: transform 0.3s ease;
+}
+
+.icon-sosmed:hover {
+  transform: scale(1.2);
+}
+
+nav {
+  margin-top: 10px;
+}
+
+nav a {
+  color: rgb(237, 221, 221);
+  text-decoration: none;
+  margin: 0 15px;
+  font-weight: bold;
+  font-size: 16px;
+  transition: color 0.3s;
+  display: inline-flex;
+  align-items: center;
+}
+
+nav a i {
+  margin-right: 8px;
+}
+
+nav a:hover {
+  color: #003d33;
+}
+
+.produk {
+  background: white;
+  border: 1px solid #ccc;
+  padding: 15px;
+  margin: 15px 0;
+  width: 250px;
+}
+
+button {
+  background-color: #dd1a1a;
+  color: white;
+  border: none;
+  padding: 10px;
+  margin: 5px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: #318bc6;
+}
+
+.footer {
+  text-align: center;
+  background-color: #38516a;
+  color: rgb(255, 242, 242);
+  padding: 15px;
+  margin-top: 30px;
+}
+
+.kontainer-produk {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+   
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <meta charset="UTF-8">
+  <title>Keranjang Belanja</title>
+  <style>
+
+ body { font-family: Arial, sans-serif; margin: 0; padding: 20px; background-color: #d6535300; }
+    header { background-color: #1fbea9; color: rgb(3, 2, 2); padding: 20px; text-align: center; }
+    nav a {
+      color: rgb(3, 2, 2); margin: 5px; text-decoration: none;
+    }
+
+    body { font-family: Arial, sans-serif; padding: 20px; background-color: #f9f9f9; }
+    .item { border-bottom: 1px solid #ccc; padding: 10px 0; }
+    .total { font-weight: bold; margin-top: 20px; }
+    button {
+      background-color: #2ecc71;
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      cursor: pointer;
+      border-radius: 5px;
+      margin-right: 10px;
+    }
+    .hapus {
+      background-color: #e74c3c;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>APUZ GAME SHOP</h1>
+    <nav>
+      <i class="fas fa-home"></i>
+      <a href="beranda.html">Beranda</a>
+      <i class="fas fa-box"></i>
+      <a href="#">Produk</a>
+      <i class="fas fa-phone"></i>
+      <a href="#kontak">kontak</a>
+      <i class="fas fa-shopping-cart"></i>
+      <a href="keranjang.html">Keranjang</a>
+  </header>
+
+
+  <h1>Keranjang Belanja</h1>
+  <div id="daftarKeranjang"></div>
+  <p class="total" id="totalHarga"></p>
+  <button class="hapus" onclick="hapusKeranjang()">Hapus Semua</button>
+  <button onclick="checkout()">Checkout</button>
+
+  <script>
+    const data = JSON.parse(localStorage.getItem('keranjang')) || [];
+    const container = document.getElementById('daftarKeranjang');
+    const totalText = document.getElementById('totalHarga');
+    let total = 0;
+
+    if (data.length === 0) {
+      container.innerHTML = "<p>Keranjang kosong.</p>";
+    } else {
+      data.forEach((item, index) => {
+        let subtotal = item.harga * item.jumlah;
+        total += subtotal;
+        container.innerHTML += `
+          <div class="item">
+            ${item.nama} - Rp ${item.harga.toLocaleString()} x ${item.jumlah} = Rp ${subtotal.toLocaleString()}
+          </div>`;
+      });
+    }
+
+    totalText.textContent = "Total: Rp " + total.toLocaleString();
+
+    function hapusKeranjang() {
+      localStorage.removeItem('keranjang');
+      location.reload();
+    }
+
+    function checkout() {
+      alert("Terima kasih! Checkout berhasil.");
+      localStorage.removeItem('keranjang');
+      location.reload();
+    }
+  </script>
+
+</body>
+</html>
