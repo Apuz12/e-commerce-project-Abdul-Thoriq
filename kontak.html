@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kontak - APUZ SHOP</title>
+  <link rel="stylesheet" href="styles.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head> 
+<body>
+    <header>
+    <div class="sosmed">
+        <a href="https://wa.me/6281234567890" target="_blank" title="WhatsApp">
+          <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp" class="icon-sosmed">
+        </a>
+        <a href="https://instagram.com/apuzshop" target="_blank" title="Instagram">
+          <img src="https://cdn-icons-png.flaticon.com/512/733/733558.png" alt="Instagram" class="icon-sosmed">
+        </a>
+        <a href="https://facebook.com/apuzshop" target="_blank" title="Facebook">
+      <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook" class="icon-sosmed">
+        </a>
+    </div>
+
+    <div class="header-container"></div>
+    <h1>APUZ GAME SHOP</h1>
+    <nav>
+    <a href="index.html"><i class="fas fa-home"></i> Beranda</a>
+        <a href="produk.html"><i class="fas fa-box"></i> Produk</a>
+        <a href="kontak.html"><i class="fas fa-envelope"></i> Kontak</a>
+        <a href="keranjang.html"><i class="fas fa-shopping-cart"></i> Keranjang</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="kontak-form">
+      <h2>Hubungi Kami</h2>
+      <p>Silakan hubungi kami melalui formulir di bawah ini atau melalui kontak yang tersedia.</p>
+      
+      <div class="info-kontak">
+        <p><strong>Email:</strong> apuzshop@gmail.com</p>
+        <p><strong>Telepon:</strong> 08380-6431-221</p>
+        <p><strong>Instagram:</strong> @apuzshop</p>
+      </div>
+
+     <form onsubmit="kirimPesan(event)">
+  <input type="text" id="nama" placeholder="Nama" required>
+  <input type="email" id="email" placeholder="Email" required>
+  <textarea id="pesan" rows="4" placeholder="Pesan Anda..." required></textarea>
+  <button type="submit">Kirim Pesan</button>
+</form>
+
+<script src="js/script.js"></script>
+
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 APUZ GAME SHOP. Semua Hak Dilindungi.</p>
+  </footer>
+
+</body>
+</html>

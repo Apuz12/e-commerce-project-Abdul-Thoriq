@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Produk - APUZ GAME SHOP</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+  <header>
+    <div class="header-container">
+      <h1>APUZ GAME SHOP</h1>
+      <nav>
+        <a href="index.html"><i class="fas fa-home"></i> Beranda</a>
+        <a href="produk.html"><i class="fas fa-box"></i> Produk</a>
+        <a href="kontak.html"><i class="fas fa-envelope"></i> Kontak</a>
+        <a href="keranjang.html"><i class="fas fa-shopping-cart"></i> Keranjang</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="kontainer-produk">
+      <div class="produk">
+        <img src="images/ps 3.png" alt="Playstation 3">
+        <a href="product1.html"><h3>Playstation 3</h3></a>
+        <p>Rp 1.100.000</p>
+        <button onclick="tambahKeKeranjang('Playstation 3', 1100000)">Tambah ke Keranjang</button>
+        <button onclick="beliLangsung('Playstation 3')">Beli Sekarang</button>
+      </div>
+
+      <div class="produk">
+        <img src="images/ps 4.png" alt="Playstation 4">
+        <a href="product2.html"><h3>Playstation 4</h3></a>
+        <p>Rp 2.499.000</p>
+        <button onclick="tambahKeKeranjang('Playstation 4', 2499000)">Tambah ke Keranjang</button>
+        <button onclick="beliLangsung('Playstation 4')">Beli Sekarang</button>
+      </div>
+
+      <div class="produk">
+        <img src="images/ps 5.png" alt="Playstation 5">
+        <a href="product3.html"><h3>Playstation 5</h3></a>
+        <p>Rp 8.588.000</p>
+        <button onclick="tambahKeKeranjang('Playstation 5', 8588000)">Tambah ke Keranjang</button>
+        <button onclick="beliLangsung('Playstation 5')">Beli Sekarang</button>
+      </div>
+
+      <div class="produk">
+        <img src="images/xbox s.jpeg" alt="Xbox Series S">
+        <a href="product4.html"><h3>Xbox Series S</h3></a>
+        <p>Rp 4.149.000</p>
+        <button onclick="tambahKeKeranjang('Xbox Series S', 4149000)">Tambah ke Keranjang</button>
+        <button onclick="beliLangsung('Xbox Series S')">Beli Sekarang</button>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 APUZ GAME SHOP. Semua hak dilindungi.</p>
+  </footer>
+
+   <script src="js/script.js"></script>
+</body>
+</html>
